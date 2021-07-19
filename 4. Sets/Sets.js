@@ -15,7 +15,8 @@ class Set {
   }
 
   member(data) {
-    if (this.set.hasOwnProperty(data)) { // Check if the data is in the set
+    if (this.set.hasOwnProperty(data)) {
+      // Check if the data is in the set
       return true;
     } else {
       return false;
@@ -25,14 +26,18 @@ class Set {
   union(secondset) {
     var unionset = new Set(); //Initialize the union set
 
-    for (var key in this.set) { // Get all the keys from the first set
-      if (this.set.hasOwnProperty(key)) { // Check if the key exists in the set
+    for (var key in this.set) {
+      // Get all the keys from the first set
+      if (this.set.hasOwnProperty(key)) {
+        // Check if the key exists in the set
         unionset.add(key); //Adds the key to the union set
       }
     }
 
-    for (var key in secondset.set) { // Get all the keys from the second set
-      if (!unionset.set.hasOwnProperty(key)) { //Check if the key exists in the union set
+    for (var key in secondset.set) {
+      // Get all the keys from the second set
+      if (!unionset.set.hasOwnProperty(key)) {
+        //Check if the key exists in the union set
         unionset.add(key); //Adds the key to the union set
       }
     }
@@ -42,8 +47,10 @@ class Set {
 
   intersect(secondset) {
     var inter = new Set(); //Initialize the intersect set
-    for (var key in this.set) { //Get the keys from the first set
-      if (secondset.hasOwnProperty(key)) { //Check if the key exists in the second set
+    for (var key in this.set) {
+      //Get the keys from the first set
+      if (secondset.hasOwnProperty(key)) {
+        //Check if the key exists in the second set
         inter.add(key); //Add the key to the union set
       }
     }
